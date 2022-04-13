@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "${SA_PASSWORD}"
+      MSSQL_PID: "Express"
+    ports:
+      - 1433:1433
+    volumes:
+      - mssql:/var/opt/mssql
+    networks:
+      - mssql
+
+volumes:
+  mssql:
+
+networks:
+  mssql:
+    driver: bridge
+
+# docker run -dp 1433:1433 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -e "MSSQL_PID=Express" --volume mssql:/var/opt/mssql --network mssql  mcr.microsoft.com/mssql/server:2019-latest
