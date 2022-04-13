@@ -43,7 +43,7 @@ This is the expected return:
 
 ```bash
 NETWORK ID     NAME       DRIVER    SCOPE
-4eba0f206c3a   mssql   bridge    local
+4eba0f206c3a   mssql      bridge    local
 ```
 
 Everything working out we can go to the next step, follow the line below to able to run the postgres service:
@@ -96,7 +96,7 @@ networks:
     driver: bridge
 ```
 
-Note that variable references are being passed, which are being taken from a .env file, you will need to have an .env file in your project root containing the same parameters below:
+Note that variable references are being passed, which are being taken from a `.env` file, you will need to have an `.env` file in your project root containing the same parameters below:
 
 ```bash
 SA_PASWORD=
